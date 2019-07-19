@@ -1,5 +1,5 @@
 https://www.cnblogs.com/weiguo21/p/MySQL.html
-Ω‚—π
+
 my.ini
 data
 cd D:\tyt\mysql-8.0.16-winx64\bin
@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `Order`;
 CREATE TABLE `Order` (
   `orderId` varchar(32) NOT NULL ,
 `clientId` varchar(32) ,
-`orderDate` datetime,
+`orderDate` datetime NULL DEFAULT CURRENT_TIMESTAMP,
 `quantity` varchar(32) ,
 `commont` varchar(255) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
