@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.example.demo.mapper.OrderMapper">
+    <select id="getOrder" resultType="com.example.demo.pojo.Order">
+        SELECT * FROM `test`.`order`
+    </select>
+    <delete id="deleteOrder" parameterType="String">
+        DELETE FROM `test`.`order` WHERE `orderId`=#{orderId}
+    </delete>
+    <insert id="addOrder" parameterType="com.example.demo.pojo.Order">
+        INSERT INTO `test`.`order` (`orderId`, `clientId`, `quantity`,`commont`) VALUES (#{orderId},#{clientId},#{quantity},#{commont})
+    </insert>
+    <update id="updateOrder" parameterType="com.example.demo.pojo.Order">
+        UPDATE `test`.`order` SET `clientId`=#{clientId},`quantity` =#{quantity},`commont`=#{commont} WHERE `orderId`=#{orderId}
+    </update>
+
+</mapper>
